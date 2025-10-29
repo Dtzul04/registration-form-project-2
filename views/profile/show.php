@@ -1,5 +1,4 @@
 <?php include __DIR__ . '/../partials/header.php'; ?>
-
 <h2>User Profile</h2>
 
 <?php if ($user): ?>
