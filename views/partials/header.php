@@ -10,7 +10,7 @@
 <body>
 
  <header class="container my-4">
-    <h1>PHP & MySQL User DIrectoery</h1>
+    <h1>PHP & MySQL User Directory</h1>
 </header>
 
 <main class="container">
