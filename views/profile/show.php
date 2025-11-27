@@ -19,7 +19,7 @@
     <br>
 
     <?php if ($user['active']): ?>
-        <a href="/webdev/Dtzul04/profile.php?action=deactivate&id=<?= htmlspecialchars($user['id']) ?>" 
+        <a href="/webdev/Dtzul04/registration-form-project-2/profile.php?action=deactivate&id=<?= htmlspecialchars($user['id']) ?>" 
            class="btn btn-danger">
             Deactivate
         </a>
@@ -28,8 +28,15 @@
     <?php endif; ?>
 
     <br><br>
-    <a href="/webdev/Dtzul04/profile.php?action=edit&id=<?= htmlspecialchars($user['id']) ?>">Edit</a>
-    <a href="/webdev/Dtzul04/register.php">Register another user</a>
+
+    <a href="/webdev/Dtzul04/registration-form-project-2/profile.php?action=edit&id=<?= htmlspecialchars($user['id']) ?>" 
+       class="btn btn-primary">
+        Edit
+    </a>
+
+    <a href="/webdev/Dtzul04/registration-form-project-2/register.php" class="btn btn-secondary">
+        Register another user
+    </a>
 
 <?php else: ?>
     <p>User not found.</p>

@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../models/UserModel.php';
 
 class UserController {
+
     public function showRegistrationForm() {
         include __DIR__ . '/../views/profile/create.php';
     }
@@ -15,8 +16,9 @@ class UserController {
         }
 
         $userId = create_user($username, $password);
+
         if ($userId) {
-            header("Location: /webdev/Dtzul04/profile.php?id=" . $userId);
+            header("Location: /webdev/Dtzul04/registration-form-project-2/profile.php?id=" . $userId);
             exit();
         } else {
             die("Error creating user.");
@@ -35,8 +37,6 @@ class UserController {
         $id = $formData['id'] ?? null;
         $confirm = $formData['confirm'] ?? 'no';
 
-        error_log("deactivateUser called with id=$id, confirm=$confirm");
-
         $user = get_user_by_id($id);
         if (!$user) {
             die("User not found.");
@@ -44,10 +44,10 @@ class UserController {
 
         if ($confirm === 'yes') {
             deactivate_user($id);
-            header("Location: /webdev/Dtzul04/register.php");
+            header("Location: /webdev/Dtzul04/registration-form-project-2/register.php");
             exit();
         } else {
-            header("Location: /webdev/Dtzul04/profile.php?id=" . $id);
+            header("Location: /webdev/Dtzul04/registration-form-project-2/profile.php?id=" . $id);
             exit();
         }
     }
@@ -70,8 +70,9 @@ class UserController {
         }
 
         $updated = update_user($id, $username, $password);
+
         if ($updated) {
-            header("Location: /webdev/Dtzul04/profile.php?id=" . $id);
+            header("Location: /webdev/Dtzul04/registration-form-project-2/profile.php?id=" . $id);
             exit();
         } else {
             die("Error updating user.");
